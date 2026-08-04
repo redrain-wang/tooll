@@ -1,34 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import NotFound from '../views/NotFound.vue'
+import { TOOLS, toModule } from '../data/tools'
 
-const toolModules = [
-  'JsonFormatter','Base64','Timestamp','RegexTester','QrCode','PasswordGenerator',
-  'WordCounter','UrlEncoder','ColorConverter','UuidGenerator','Markdown',
-  'ImageBase64','TextDiff','NumberBase','HtmlEscape','CronGenerator',
-  'LoremIpsum','JsonToCsv','ColorPalette','HashGenerator','TextToSlug','MdToHtml',
-  'TextDedup','TextSort','TextReverse','CaseConverter','TextReplace','Notepad','TextAscii',
-  'JwtDecoder','XmlFormatter','CssMinify','JsMinify','HtmlFormatter','RegexCheatsheet','RegexLib',
-  'AesEncrypt','RandomNumber','MorseCode','UnitConverter','RmbUppercase','NumberChinese',
-  'UserAgent','UrlParser','DateCalc','Countdown','Stopwatch','Pomodoro','ColorBlind',
-  'CharInfo','Barcode','ImageInfo','GradientGenerator','TextStats','PasswordStrength','PasswordBatch','HexRgb',
-  'ImageCompress','JsonTree','RegexVisual','QrScanner','DeviceInfo','Clipboard','TableGenerator',
-  'RsaGenerator','ColorExtract','SpeedTest','PasswordVault','TextCompare',
-  'Translator','ImageEditor','ImageCrop','FaviconGen',
-  'SvgEditor','CodeFormatter','JsonSchemaGen','JsonExcel','RegexBuilder','ColorContrast','MetaTagGen','ColorPicker','ColorMixer','PromptLibrary','ApiTester','CssAnimation','QrBeautify','ImageToSvg','SvgExport','JsonpGenerator','LoremImage','ImageFormat','RegexExplainer','CssUnit','HtmlPreview','TextToSpeech','ColorHarmony','TextCipher','CssGrid','TextHandwriting','MdTable','RegexHighlight','TimestampEnhanced',
-  'JsonToTs','JsonToSql','EmojiPicker','SqlFormatter','CsvToJson','CssToTailwind',
-  'MermaidChart','DataChart','CodeRunner','DrawingBoard',
-]
-
-function toKebab(s){return s.replace(/([A-Z])/g,'-$1').toLowerCase().replace(/^-/,'')}
-
+// 工具组件懒加载由 dynamic import 完成，路径无需枚举
 const routes = [
   { path: '/', name: 'Home', component: Home, meta: { title: 'ToolBox - 108+ Free Online Tools', description: 'Free online toolbox with 108+ tools for developers, designers, and productivity. JSON formatter, regex tester, color picker, and more.' } },
   { path: '/category/:key', name: 'Category', component: () => import('../views/Category.vue'), meta: { title: 'Category - ToolBox' } },
-  ...toolModules.map(m => ({
-    path: '/' + toKebab(m), name: m,
-    component: () => import(`../views/tools/${m}.vue`),
-    meta: { title: toKebab(m).replace(/-/g,' ') + ' - ToolBox', description: 'Free online ' + toKebab(m).replace(/-/g,' ') + ' tool. Use it now!' }
+  ...TOOLS.map(t => ({
+    path: t.path, name: toModule(t.path),
+    component: () => import(`../views/tools/${toModule(t.path)}.vue`),
+    meta: { title: t.path.slice(1).replace(/-/g, ' ') + ' - ToolBox', description: 'Free online ' + t.path.slice(1).replace(/-/g, ' ') + ' tool. Use it now!' }
   })),
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]

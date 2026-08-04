@@ -1,0 +1,164 @@
+export const CATEGORIES = [
+  { key: 'text', icon: '📝', labelKey: 'cat-text' },
+  { key: 'dev', icon: '💻', labelKey: 'cat-dev' },
+  { key: 'frontend', icon: '🎨', labelKey: 'cat-frontend' },
+  { key: 'regex', icon: '🔍', labelKey: 'cat-regex' },
+  { key: 'crypto', icon: '🔒', labelKey: 'cat-crypto' },
+  { key: 'gen', icon: '🎲', labelKey: 'cat-gen' },
+  { key: 'convert', icon: '🔄', labelKey: 'cat-convert' },
+  { key: 'color', icon: '🌈', labelKey: 'cat-color' },
+  { key: 'util', icon: '🧰', labelKey: 'cat-util' },
+  { key: 'time', icon: '⏰', labelKey: 'cat-time' },
+]
+
+// 每个工具条目：path 是路由路径；key 是 i18n 键；icon、cat 用于首页展示。
+// module（组件名）由 path 自动派生（kebab -> Pascal），descKey 由 key + '-desc' 派生。
+export const TOOLS = [
+  // text
+  { path: '/json-formatter', key: 'json-formatter', icon: '{ }', cat: 'text' },
+  { path: '/markdown', key: 'markdown', icon: '📄', cat: 'text' },
+  { path: '/md-to-html', key: 'md-to-html', icon: '🔄', cat: 'text' },
+  { path: '/word-counter', key: 'word-counter', icon: '📝', cat: 'text' },
+  { path: '/text-stats', key: 'text-stats', icon: '📊', cat: 'text' },
+  { path: '/text-dedup', key: 'text-dedup', icon: '📋', cat: 'text' },
+  { path: '/text-sort', key: 'text-sort', icon: '🔤', cat: 'text' },
+  { path: '/text-reverse', key: 'text-reverse', icon: '🔃', cat: 'text' },
+  { path: '/case-converter', key: 'case-converter', icon: '🔠', cat: 'text' },
+  { path: '/text-replace', key: 'text-replace', icon: '🔄', cat: 'text' },
+  { path: '/notepad', key: 'notepad', icon: '📒', cat: 'text' },
+  { path: '/text-ascii', key: 'text-ascii', icon: '💻', cat: 'text' },
+  { path: '/text-diff', key: 'text-diff', icon: '📊', cat: 'text' },
+  { path: '/text-compare', key: 'text-compare', icon: '🔍', cat: 'text' },
+  { path: '/text-to-slug', key: 'text-to-slug', icon: '🔗', cat: 'text' },
+  { path: '/text-handwriting', key: 'text-handwriting', icon: '✍️', cat: 'text' },
+  { path: '/md-table', key: 'md-table', icon: '📊', cat: 'text' },
+  { path: '/text-cipher', key: 'text-cipher', icon: '🔒', cat: 'text' },
+  // dev
+  { path: '/base64', key: 'base64', icon: '🔐', cat: 'dev' },
+  { path: '/url-encoder', key: 'url-encoder', icon: '🌐', cat: 'dev' },
+  { path: '/html-escape', key: 'html-escape', icon: '🏷️', cat: 'dev' },
+  { path: '/hash-generator', key: 'hash-generator', icon: '#️⃣', cat: 'dev' },
+  { path: '/json-to-csv', key: 'json-to-csv', icon: '📊', cat: 'dev' },
+  { path: '/jwt-decoder', key: 'jwt-decoder', icon: '🎫', cat: 'dev' },
+  { path: '/xml-formatter', key: 'xml-formatter', icon: '📋', cat: 'dev' },
+  { path: '/json-tree', key: 'json-tree', icon: '🌳', cat: 'dev' },
+  { path: '/table-generator', key: 'table-generator', icon: '📊', cat: 'dev' },
+  { path: '/code-formatter', key: 'code-formatter', icon: '🎨', cat: 'dev' },
+  { path: '/json-schema-gen', key: 'json-schema-gen', icon: '📋', cat: 'dev' },
+  { path: '/json-excel', key: 'json-excel', icon: '📊', cat: 'dev' },
+  { path: '/jsonp-generator', key: 'jsonp-generator', icon: '📋', cat: 'dev' },
+  { path: '/api-tester', key: 'api-tester', icon: '🔌', cat: 'dev' },
+  { path: '/prompt-library', key: 'prompt-library', icon: '🤖', cat: 'dev' },
+  { path: '/json-to-ts', key: 'json-to-ts', icon: '💻', cat: 'dev' },
+  { path: '/json-to-sql', key: 'json-to-sql', icon: '💻', cat: 'dev' },
+  { path: '/csv-to-json', key: 'csv-to-json', icon: '💻', cat: 'dev' },
+  { path: '/mermaid-chart', key: 'mermaid-chart', icon: '📊', cat: 'dev' },
+  { path: '/data-chart', key: 'data-chart', icon: '📈', cat: 'dev' },
+  { path: '/code-runner', key: 'code-runner', icon: '▶️', cat: 'dev' },
+  // frontend
+  { path: '/css-minify', key: 'css-minify', icon: '🎨', cat: 'frontend' },
+  { path: '/js-minify', key: 'js-minify', icon: '⚡', cat: 'frontend' },
+  { path: '/html-formatter', key: 'html-formatter', icon: '📋', cat: 'frontend' },
+  { path: '/css-animation', key: 'css-anim', icon: '✨', cat: 'frontend' },
+  { path: '/css-grid', key: 'css-grid', icon: '🔲', cat: 'frontend' },
+  { path: '/css-unit', key: 'css-unit', icon: '📐', cat: 'frontend' },
+  { path: '/html-preview', key: 'html-preview', icon: '👁️', cat: 'frontend' },
+  { path: '/svg-editor', key: 'svg-editor', icon: '🎨', cat: 'frontend' },
+  { path: '/css-to-tailwind', key: 'css-to-tailwind', icon: '🎨', cat: 'frontend' },
+  // regex
+  { path: '/regex-tester', key: 'regex-tester', icon: '🔍', cat: 'regex' },
+  { path: '/regex-cheatsheet', key: 'regex-cheatsheet', icon: '📖', cat: 'regex' },
+  { path: '/regex-lib', key: 'regex-lib', icon: '📚', cat: 'regex' },
+  { path: '/regex-visual', key: 'regex-visual', icon: '🔎', cat: 'regex' },
+  { path: '/regex-builder', key: 'regex-builder', icon: '🔧', cat: 'regex' },
+  { path: '/regex-explainer', key: 'regex-explainer', icon: '🔍', cat: 'regex' },
+  { path: '/regex-highlight', key: 'regex-highlight', icon: '🔍', cat: 'regex' },
+  // crypto
+  { path: '/aes-encrypt', key: 'aes-encrypt', icon: '🔒', cat: 'crypto' },
+  { path: '/rsa-generator', key: 'rsa-generator', icon: '🔐', cat: 'crypto' },
+  { path: '/password-generator', key: 'password-generator', icon: '🔑', cat: 'crypto' },
+  { path: '/password-strength', key: 'password-strength', icon: '🛡️', cat: 'crypto' },
+  { path: '/password-batch', key: 'batch-pwd', icon: '🔑', cat: 'crypto' },
+  { path: '/password-vault', key: 'password-vault', icon: '🏦', cat: 'crypto' },
+  // gen
+  { path: '/qr-code', key: 'qrcode', icon: '📱', cat: 'gen' },
+  { path: '/qr-beautify', key: 'qr-beautify', icon: '🎨', cat: 'gen' },
+  { path: '/barcode', key: 'barcode', icon: '📊', cat: 'gen' },
+  { path: '/uuid-generator', key: 'uuid-generator', icon: '🆔', cat: 'gen' },
+  { path: '/random-number', key: 'random-number', icon: '🎲', cat: 'gen' },
+  { path: '/cron-generator', key: 'cron-generator', icon: '⏰', cat: 'gen' },
+  { path: '/lorem-ipsum', key: 'lorem-ipsum', icon: '📝', cat: 'gen' },
+  { path: '/lorem-image', key: 'lorem-image', icon: '🖼️', cat: 'gen' },
+  { path: '/gradient-generator', key: 'gradient-generator', icon: '🌈', cat: 'gen' },
+  { path: '/favicon-gen', key: 'favicon-gen', icon: '🎯', cat: 'gen' },
+  { path: '/emoji-picker', key: 'emoji-picker', icon: '🎲', cat: 'gen' },
+  { path: '/drawing-board', key: 'drawing-board', icon: '🎨', cat: 'gen' },
+  // convert
+  { path: '/timestamp', key: 'timestamp', icon: '⏱️', cat: 'convert' },
+  { path: '/timestamp-enhanced', key: 'timestamp-enhanced', icon: '⏱️', cat: 'convert' },
+  { path: '/number-base', key: 'number-base', icon: '🔢', cat: 'convert' },
+  { path: '/morse-code', key: 'morse-code', icon: '📡', cat: 'convert' },
+  { path: '/unit-converter', key: 'unit-converter', icon: '📐', cat: 'convert' },
+  { path: '/rmb-uppercase', key: 'rmb-uppercase', icon: '💰', cat: 'convert' },
+  { path: '/number-chinese', key: 'number-chinese', icon: '🔢', cat: 'convert' },
+  { path: '/translator', key: 'translator', icon: '🌐', cat: 'convert' },
+  { path: '/image-format', key: 'image-format', icon: '🔄', cat: 'convert' },
+  { path: '/image-to-svg', key: 'image-to-svg', icon: '🖼️', cat: 'convert' },
+  { path: '/svg-export', key: 'svg-export', icon: '📤', cat: 'convert' },
+  // color
+  { path: '/color-converter', key: 'color-converter', icon: '🎨', cat: 'color' },
+  { path: '/color-palette', key: 'color-palette', icon: '🎨', cat: 'color' },
+  { path: '/hex-rgb', key: 'hex-rgb', icon: '🎨', cat: 'color' },
+  { path: '/color-extract', key: 'color-extract', icon: '🖼️', cat: 'color' },
+  { path: '/color-blind', key: 'color-blind', icon: '👁️', cat: 'color' },
+  { path: '/color-contrast', key: 'color-contrast', icon: '♿', cat: 'color' },
+  { path: '/color-picker', key: 'color-picker', icon: '🎨', cat: 'color' },
+  { path: '/color-mixer', key: 'color-mixer', icon: '🎨', cat: 'color' },
+  { path: '/color-harmony', key: 'color-harmony', icon: '🎭', cat: 'color' },
+  // util
+  { path: '/image-compress', key: 'image-compress', icon: '🖼️', cat: 'util' },
+  { path: '/image-base64', key: 'image-base64', icon: '📷', cat: 'util' },
+  { path: '/image-info', key: 'image-info', icon: '📷', cat: 'util' },
+  { path: '/qr-scanner', key: 'qr-scanner', icon: '📷', cat: 'util' },
+  { path: '/char-info', key: 'char-info', icon: '🔤', cat: 'util' },
+  { path: '/device-info', key: 'device-info', icon: '📱', cat: 'util' },
+  { path: '/clipboard', key: 'clipboard', icon: '📋', cat: 'util' },
+  { path: '/speed-test', key: 'speed-test', icon: '🌐', cat: 'util' },
+  { path: '/image-editor', key: 'image-editor', icon: '🖼️', cat: 'util' },
+  { path: '/image-crop', key: 'image-crop', icon: '✂️', cat: 'util' },
+  { path: '/meta-tag-gen', key: 'meta-tag-gen', icon: '🏷️', cat: 'util' },
+  { path: '/text-to-speech', key: 'text-to-speech', icon: '🔊', cat: 'util' },
+  { path: '/user-agent', key: 'user-agent', icon: '🌐', cat: 'util' },
+  { path: '/url-parser', key: 'url-parser', icon: '🔗', cat: 'util' },
+  { path: '/sql-formatter', key: 'sql-formatter', icon: '🧰', cat: 'util' },
+  // time
+  { path: '/countdown', key: 'countdown', icon: '⏳', cat: 'time' },
+  { path: '/stopwatch', key: 'stopwatch', icon: '⏱️', cat: 'time' },
+  { path: '/pomodoro', key: 'pomodoro', icon: '🍅', cat: 'time' },
+  { path: '/date-calc', key: 'date-calc', icon: '📅', cat: 'time' },
+]
+
+export function toKebab(s) { return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '') }
+export function toModule(path) {
+  return path.replace(/^\//, '').replace(/-([a-z])/g, (m, c) => c.toUpperCase()).replace(/^[a-z]/, c => c.toUpperCase())
+}
+
+export const categories = CATEGORIES.map(c => ({
+  ...c,
+  tools: TOOLS.filter(t => t.cat === c.key).map(t => ({ p: t.path, k: t.key })),
+}))
+
+export const categoriesByKey = Object.fromEntries(CATEGORIES.map(c => [c.key, c]))
+
+// 首页用：展开为 { path, icon, key, descKey, cat }
+export const homeTools = TOOLS.map(t => ({
+  path: t.path,
+  icon: t.icon,
+  key: t.key,
+  descKey: t.key + '-desc',
+  cat: t.cat,
+}))
+
+// a 工具按分类计数
+export const toolsByCatCount = Object.fromEntries(CATEGORIES.map(c => [c.key, TOOLS.filter(t => t.cat === c.key).length]))
+export const TOTAL_TOOLS = TOOLS.length
