@@ -1,0 +1,12 @@
+services:
+  toolbox:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: toolbox:latest
+    container_name: toolbox
+    restart: unless-stopped
+    ports:
+      - "8089:80"
+    environment:
+      - NODE_ENV=production
