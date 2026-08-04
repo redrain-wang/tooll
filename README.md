@@ -2,6 +2,12 @@
 
 > A lightweight, fast, offline-capable online tool platform with 108+ tools across 10 categories, built with Vue 3 + Vite + Tailwind CSS.
 
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub Pages](https://img.shields.io/github/deployments/redrain-wang/tooll/github-pages?label=pages)](https://redrain-wang.github.io/tooll/)
+
+- **Online Demo**: https://redrain-wang.github.io/tooll/
+- **Live Site**: https://tooll.cc.cd
+
 ---
 
 ## Features
@@ -223,6 +229,30 @@ Modern browsers (Chrome, Firefox, Edge, Safari - latest 2 major versions).
 
 ---
 
+## Development
+
+```bash
+npm install
+npm run dev        # dev server on http://localhost:3000
+npm run build      # production build to dist/
+npm test           # run vitest unit tests
+```
+
+Push to `main` automatically builds and deploys to GitHub Pages via GitHub Actions.
+
+---
+
 ## License
 
 MIT
+
+---
+
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a pull request
