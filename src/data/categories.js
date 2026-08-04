@@ -24,6 +24,7 @@ export const categories = [
       {p:'/jsonp-generator',k:'jsonp-generator'},
       {p:'/api-tester',k:'api-tester'},{p:'/prompt-library',k:'prompt-library'},
       {p:'/json-to-ts',k:'json-to-ts'},{p:'/json-to-sql',k:'json-to-sql'},{p:'/csv-to-json',k:'csv-to-json'},
+      {p:'/mermaid-chart',k:'mermaid-chart'},{p:'/data-chart',k:'data-chart'},{p:'/code-runner',k:'code-runner'},
     ]
   },
   {
@@ -61,6 +62,7 @@ export const categories = [
       {p:'/gradient-generator',k:'gradient-generator'},
       {p:'/favicon-gen',k:'favicon-gen'},
       {p:'/emoji-picker',k:'emoji-picker'},
+      {p:'/drawing-board',k:'drawing-board'},
     ]
   },
   {

@@ -17,6 +17,7 @@ const toolModules = [
   'Translator','ImageEditor','ImageCrop','FaviconGen',
   'SvgEditor','CodeFormatter','JsonSchemaGen','JsonExcel','RegexBuilder','ColorContrast','MetaTagGen','ColorPicker','ColorMixer','PromptLibrary','ApiTester','CssAnimation','QrBeautify','ImageToSvg','SvgExport','JsonpGenerator','LoremImage','ImageFormat','RegexExplainer','CssUnit','HtmlPreview','TextToSpeech','ColorHarmony','TextCipher','CssGrid','TextHandwriting','MdTable','RegexHighlight','TimestampEnhanced',
   'JsonToTs','JsonToSql','EmojiPicker','SqlFormatter','CsvToJson','CssToTailwind',
+  'MermaidChart','DataChart','CodeRunner','DrawingBoard',
 ]
 
 function toKebab(s){return s.replace(/([A-Z])/g,'-$1').toLowerCase().replace(/^-/,'')}
