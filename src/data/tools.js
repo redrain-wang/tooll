@@ -55,6 +55,8 @@ export const TOOLS = [
   { path: '/mermaid-chart', key: 'mermaid-chart', icon: '📊', cat: 'dev' },
   { path: '/data-chart', key: 'data-chart', icon: '📈', cat: 'dev' },
   { path: '/code-runner', key: 'code-runner', icon: '▶️', cat: 'dev' },
+  { path: '/code-shot', key: 'code-shot', icon: '📸', cat: 'dev' },
+  { path: '/sql-builder', key: 'sql-builder', icon: '🗄️', cat: 'dev' },
   // frontend
   { path: '/css-minify', key: 'css-minify', icon: '🎨', cat: 'frontend' },
   { path: '/js-minify', key: 'js-minify', icon: '⚡', cat: 'frontend' },
