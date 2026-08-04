@@ -33,7 +33,16 @@ const routes = [
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 
-const router = createRouter({ history: createWebHistory(), routes, scrollBehavior() { return { top: 0 } } })
+function resolveBase() {
+  if (typeof window === 'undefined') return '/'
+  const baseEl = document.querySelector('base')
+  let base = baseEl && baseEl.getAttribute('href') || window.location.pathname
+  base = base.replace(/\/[^/]*$/, '/')
+  if (base[0] !== '/') base = '/' + base
+  return base
+}
+
+const router = createRouter({ history: createWebHistory(resolveBase()), routes, scrollBehavior() { return { top: 0 } } })
 router.afterEach((to) => {
   document.title = to.meta.title || 'ToolBox - Free Online Tools'
   let desc = document.querySelector('meta[name="description"]')
