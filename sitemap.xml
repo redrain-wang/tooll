@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://tooll.cc.cd/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tooll.cc.cd/category/text</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/category/dev</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/category/frontend</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/category/regex</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/category/crypto</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/category/gen</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/category/convert</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/category/color</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/category/util</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/category/time</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tooll.cc.cd/json-formatter</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tooll.cc.cd/base64</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tooll.cc.cd/regex-tester</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tooll.cc.cd/qr-code</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tooll.cc.cd/password-generator</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tooll.cc.cd/color-converter</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tooll.cc.cd/timestamp</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tooll.cc.cd/unit-converter</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tooll.cc.cd/uuid-generator</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tooll.cc.cd/hash-generator</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>
