@@ -30,9 +30,7 @@ export const TOOLS = [
   { path: '/text-diff', key: 'text-diff', icon: '📊', cat: 'text' },
   { path: '/text-compare', key: 'text-compare', icon: '🔍', cat: 'text' },
   { path: '/text-to-slug', key: 'text-to-slug', icon: '🔗', cat: 'text' },
-  { path: '/text-handwriting', key: 'text-handwriting', icon: '✍️', cat: 'text' },
   { path: '/md-table', key: 'md-table', icon: '📊', cat: 'text' },
-  { path: '/text-cipher', key: 'text-cipher', icon: '🔒', cat: 'text' },
   // dev
   { path: '/base64', key: 'base64', icon: '🔐', cat: 'dev' },
   { path: '/url-encoder', key: 'url-encoder', icon: '🌐', cat: 'dev' },
@@ -56,7 +54,6 @@ export const TOOLS = [
   { path: '/data-chart', key: 'data-chart', icon: '📈', cat: 'dev' },
   { path: '/code-runner', key: 'code-runner', icon: '▶️', cat: 'dev' },
   { path: '/code-shot', key: 'code-shot', icon: '📸', cat: 'dev' },
-  { path: '/sql-builder', key: 'sql-builder', icon: '🗄️', cat: 'dev' },
   // frontend
   { path: '/css-minify', key: 'css-minify', icon: '🎨', cat: 'frontend' },
   { path: '/js-minify', key: 'js-minify', icon: '⚡', cat: 'frontend' },
@@ -90,7 +87,6 @@ export const TOOLS = [
   { path: '/random-number', key: 'random-number', icon: '🎲', cat: 'gen' },
   { path: '/cron-generator', key: 'cron-generator', icon: '⏰', cat: 'gen' },
   { path: '/lorem-ipsum', key: 'lorem-ipsum', icon: '📝', cat: 'gen' },
-  { path: '/lorem-image', key: 'lorem-image', icon: '🖼️', cat: 'gen' },
   { path: '/gradient-generator', key: 'gradient-generator', icon: '🌈', cat: 'gen' },
   { path: '/favicon-gen', key: 'favicon-gen', icon: '🎯', cat: 'gen' },
   { path: '/emoji-picker', key: 'emoji-picker', icon: '🎲', cat: 'gen' },
@@ -105,7 +101,6 @@ export const TOOLS = [
   { path: '/number-chinese', key: 'number-chinese', icon: '🔢', cat: 'convert' },
   { path: '/translator', key: 'translator', icon: '🌐', cat: 'convert' },
   { path: '/image-format', key: 'image-format', icon: '🔄', cat: 'convert' },
-  { path: '/image-to-svg', key: 'image-to-svg', icon: '🖼️', cat: 'convert' },
   { path: '/svg-export', key: 'svg-export', icon: '📤', cat: 'convert' },
   // color
   { path: '/color-converter', key: 'color-converter', icon: '🎨', cat: 'color' },
