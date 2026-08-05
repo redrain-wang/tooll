@@ -9,6 +9,8 @@ export const CATEGORIES = [
   { key: 'color', icon: '🌈', labelKey: 'cat-color' },
   { key: 'util', icon: '🧰', labelKey: 'cat-util' },
   { key: 'time', icon: '⏰', labelKey: 'cat-time' },
+  { key: 'life', icon: '🏠', labelKey: 'cat-life' },
+  { key: 'office', icon: '📄', labelKey: 'cat-office' },
 ]
 
 // 每个工具条目：path 是路由路径；key 是 i18n 键；icon、cat 用于首页展示。
@@ -133,6 +135,14 @@ export const TOOLS = [
   { path: '/stopwatch', key: 'stopwatch', icon: '⏱️', cat: 'time' },
   { path: '/pomodoro', key: 'pomodoro', icon: '🍅', cat: 'time' },
   { path: '/date-calc', key: 'date-calc', icon: '📅', cat: 'time' },
+  // life
+  { path: '/temperature-converter', key: 'temperature-converter', icon: '🌡️', cat: 'life' },
+  { path: '/bmi-calculator', key: 'bmi-calculator', icon: '⚖️', cat: 'life' },
+  { path: '/mortgage-calculator', key: 'mortgage-calculator', icon: '🏦', cat: 'life' },
+  // office
+  { path: '/image-to-pdf', key: 'image-to-pdf', icon: '📄', cat: 'office' },
+  { path: '/gif-splitter', key: 'gif-splitter', icon: '🎞️', cat: 'office' },
+  { path: '/image-to-ascii', key: 'image-to-ascii', icon: '🖼️', cat: 'office' },
 ]
 
 export function toKebab(s) { return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '') }

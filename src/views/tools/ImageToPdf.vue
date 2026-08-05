@@ -1,0 +1,78 @@
+<template>
+  <div class="tool-container">
+    <h1 class="text-2xl font-bold mb-2">📄 {{ t('image-to-pdf') }}</h1>
+    <p class="mb-6" style="color:var(--text-secondary)">{{ t('image-to-pdf-desc') }}</p>
+
+    <div class="card p-6 text-center" @click="$refs.fileInput.click()" @dragover.prevent="dragging=true" @dragleave="dragging=false" @drop.prevent="onDrop" :class="dragging ? 'ring-2 ring-indigo-400' : ''" style="border:2px dashed var(--border);cursor:pointer">
+      <div class="text-4xl mb-2">📤</div>
+      <p>{{ t('drop-or-click') }}</p>
+      <p class="text-sm mt-1" style="color:var(--text-secondary)">{{ t('image-to-pdf-hint') }}</p>
+      <input ref="fileInput" type="file" accept="image/*" multiple class="hidden" @change="onSelect">
+    </div>
+
+    <div v-if="images.length" class="mt-4 space-y-3">
+      <div class="flex flex-wrap gap-3">
+        <div v-for="(img, i) in images" :key="i" class="relative card p-2 w-28">
+          <img :src="img.dataUrl" class="w-full h-24 object-contain rounded">
+          <button @click="removeImage(i)" class="absolute top-1 right-1 w-5 h-5 rounded-full bg-red-500 text-white text-xs">×</button>
+        </div>
+      </div>
+      <button @click="generatePdf" class="btn-primary" :disabled="busy">📄 {{ t('generate-pdf') }}</button>
+      <div v-if="err" class="text-sm text-red-500">{{ err }}</div>
+    </div>
+  </div>
+</template>
+<script setup>
+import { ref } from 'vue'
+import { jsPDF } from 'jspdf'
+import { t } from '../../i18n'
+
+const images = ref([])
+const dragging = ref(false)
+const busy = ref(false)
+const err = ref('')
+
+async function load(file) {
+  const reader = new FileReader()
+  return new Promise((resolve, reject) => {
+    reader.onload = () => {
+      const img = new Image()
+      img.onload = () => resolve({ dataUrl: reader.result, w: img.naturalWidth, h: img.naturalHeight })
+      img.onerror = reject
+      img.src = reader.result
+    }
+    reader.onerror = reject
+    reader.readAsDataURL(file)
+  })
+}
+
+async function addFiles(fileList) {
+  err.value = ''
+  for (const f of fileList) {
+    if (!f.type.startsWith('image/')) continue
+    try { images.value.push(await load(f)) } catch { err.value = t('image-load-error') }
+  }
+}
+function onSelect(e) { addFiles(e.target.files) }
+function onDrop(e) { dragging.value = false; addFiles(e.dataTransfer.files) }
+function removeImage(i) { images.value.splice(i, 1) }
+
+async function generatePdf() {
+  busy.value = true
+  err.value = ''
+  try {
+    const pdf = new jsPDF('p', 'pt', 'a4')
+    const pageW = pdf.internal.pageSize.getWidth()
+    const pageH = pdf.internal.pageSize.getHeight()
+    images.value.forEach((img, i) => {
+      if (i > 0) pdf.addPage()
+      const ratio = Math.min(pageW / img.w, pageH / img.h)
+      const w = img.w * ratio, h = img.h * ratio
+      const x = (pageW - w) / 2, y = (pageH - h) / 2
+      pdf.addImage(img.dataUrl, 'PNG', x, y, w, h)
+    })
+    pdf.save('images.pdf')
+  } catch { err.value = t('pdf-error') }
+  busy.value = false
+}
+</script>
