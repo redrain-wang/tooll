@@ -11,13 +11,17 @@
     </div>
 
     <div v-if="images.length" class="mt-4 space-y-3">
+      <div class="flex gap-2">
+        <button @click="mode = 'single'" class="px-4 py-2 rounded-lg text-sm font-medium" :style="mode === 'single' ? 'background:var(--primary);color:#fff' : 'background:var(--bg);color:var(--text-secondary)'">{{ t('mode-single-pdf') }}</button>
+        <button @click="mode = 'multi'" class="px-4 py-2 rounded-lg text-sm font-medium" :style="mode === 'multi' ? 'background:var(--primary);color:#fff' : 'background:var(--bg);color:var(--text-secondary)'">{{ t('mode-multi-pdf') }}</button>
+      </div>
       <div class="flex flex-wrap gap-3">
         <div v-for="(img, i) in images" :key="i" class="relative card p-2 w-28">
           <img :src="img.dataUrl" class="w-full h-24 object-contain rounded">
           <button @click="removeImage(i)" class="absolute top-1 right-1 w-5 h-5 rounded-full bg-red-500 text-white text-xs">×</button>
         </div>
       </div>
-      <button @click="generatePdf" class="btn-primary" :disabled="busy">📄 {{ t('generate-pdf') }}</button>
+      <button @click="generatePdf" class="btn-primary" :disabled="busy">📄 {{ mode === 'single' ? t('generate-pdf') : t('generate-pdfs') }}</button>
       <div v-if="err" class="text-sm text-red-500">{{ err }}</div>
     </div>
   </div>
@@ -31,19 +35,30 @@ const images = ref([])
 const dragging = ref(false)
 const busy = ref(false)
 const err = ref('')
+const mode = ref('single')
 
 async function load(file) {
   const reader = new FileReader()
   return new Promise((resolve, reject) => {
     reader.onload = () => {
       const img = new Image()
-      img.onload = () => resolve({ dataUrl: reader.result, w: img.naturalWidth, h: img.naturalHeight })
+      img.onload = () => resolve({ dataUrl: reader.result, w: img.naturalWidth, h: img.naturalHeight, name: file.name.replace(/\.[^.]+$/, '') })
       img.onerror = reject
       img.src = reader.result
     }
     reader.onerror = reject
     reader.readAsDataURL(file)
   })
+}
+
+function addImageToPdf(pdf, img, first) {
+  if (!first) pdf.addPage()
+  const pageW = pdf.internal.pageSize.getWidth()
+  const pageH = pdf.internal.pageSize.getHeight()
+  const ratio = Math.min(pageW / img.w, pageH / img.h)
+  const w = img.w * ratio, h = img.h * ratio
+  const x = (pageW - w) / 2, y = (pageH - h) / 2
+  pdf.addImage(img.dataUrl, 'PNG', x, y, w, h)
 }
 
 async function addFiles(fileList) {
@@ -61,17 +76,17 @@ async function generatePdf() {
   busy.value = true
   err.value = ''
   try {
-    const pdf = new jsPDF('p', 'pt', 'a4')
-    const pageW = pdf.internal.pageSize.getWidth()
-    const pageH = pdf.internal.pageSize.getHeight()
-    images.value.forEach((img, i) => {
-      if (i > 0) pdf.addPage()
-      const ratio = Math.min(pageW / img.w, pageH / img.h)
-      const w = img.w * ratio, h = img.h * ratio
-      const x = (pageW - w) / 2, y = (pageH - h) / 2
-      pdf.addImage(img.dataUrl, 'PNG', x, y, w, h)
-    })
-    pdf.save('images.pdf')
+    if (mode.value === 'single') {
+      const pdf = new jsPDF('p', 'pt', 'a4')
+      images.value.forEach((img, i) => addImageToPdf(pdf, img, i === 0))
+      pdf.save('images.pdf')
+    } else {
+      for (const img of images.value) {
+        const pdf = new jsPDF('p', 'pt', 'a4')
+        addImageToPdf(pdf, img, true)
+        pdf.save(`${img.name}.pdf`)
+      }
+    }
   } catch { err.value = t('pdf-error') }
   busy.value = false
 }
