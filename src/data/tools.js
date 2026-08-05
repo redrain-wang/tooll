@@ -143,12 +143,18 @@ export const TOOLS = [
   { path: '/id-card-parser', key: 'id-card-parser', icon: '🪪', cat: 'life' },
   { path: '/calorie-calculator', key: 'calorie-calculator', icon: '🔥', cat: 'life' },
   { path: '/age-calculator', key: 'age-calculator', icon: '🎂', cat: 'life' },
+  { path: '/blood-type', key: 'blood-type', icon: '🩸', cat: 'life' },
+  { path: '/sleep-calculator', key: 'sleep-calculator', icon: '😴', cat: 'life' },
+  { path: '/world-clock', key: 'world-clock', icon: '🌍', cat: 'life' },
   // office
   { path: '/image-to-pdf', key: 'image-to-pdf', icon: '📄', cat: 'office' },
   { path: '/gif-splitter', key: 'gif-splitter', icon: '🎞️', cat: 'office' },
   { path: '/image-to-ascii', key: 'image-to-ascii', icon: '🖼️', cat: 'office' },
   { path: '/excel-merge', key: 'excel-merge', icon: '📗', cat: 'office' },
   { path: '/pdf-merge', key: 'pdf-merge', icon: '📚', cat: 'office' },
+  { path: '/pdf-split', key: 'pdf-split', icon: '✂️', cat: 'office' },
+  { path: '/id-photo', key: 'id-photo', icon: '🪪', cat: 'office' },
+  { path: '/signature-pad', key: 'signature-pad', icon: '✍️', cat: 'office' },
 ]
 
 export function toKebab(s) { return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '') }
