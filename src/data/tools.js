@@ -139,10 +139,16 @@ export const TOOLS = [
   { path: '/temperature-converter', key: 'temperature-converter', icon: '🌡️', cat: 'life' },
   { path: '/bmi-calculator', key: 'bmi-calculator', icon: '⚖️', cat: 'life' },
   { path: '/mortgage-calculator', key: 'mortgage-calculator', icon: '🏦', cat: 'life' },
+  { path: '/tax-calculator', key: 'tax-calculator', icon: '🧾', cat: 'life' },
+  { path: '/id-card-parser', key: 'id-card-parser', icon: '🪪', cat: 'life' },
+  { path: '/calorie-calculator', key: 'calorie-calculator', icon: '🔥', cat: 'life' },
+  { path: '/age-calculator', key: 'age-calculator', icon: '🎂', cat: 'life' },
   // office
   { path: '/image-to-pdf', key: 'image-to-pdf', icon: '📄', cat: 'office' },
   { path: '/gif-splitter', key: 'gif-splitter', icon: '🎞️', cat: 'office' },
   { path: '/image-to-ascii', key: 'image-to-ascii', icon: '🖼️', cat: 'office' },
+  { path: '/excel-merge', key: 'excel-merge', icon: '📗', cat: 'office' },
+  { path: '/pdf-merge', key: 'pdf-merge', icon: '📚', cat: 'office' },
 ]
 
 export function toKebab(s) { return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '') }
