@@ -152,6 +152,9 @@ export const TOOLS = [
   { path: '/insurance-calc', key: 'insurance-calc', icon: '🛡️', cat: 'life' },
   { path: '/retirement-age', key: 'retirement-age', icon: '👴', cat: 'life' },
   { path: '/due-date', key: 'due-date', icon: '🤰', cat: 'life' },
+  { path: '/currency-converter', key: 'currency-converter', icon: '💱', cat: 'life' },
+  { path: '/ovulation-calc', key: 'ovulation-calc', icon: '🌸', cat: 'life' },
+  { path: '/height-predict', key: 'height-predict', icon: '📏', cat: 'life' },
   // office
   { path: '/image-to-pdf', key: 'image-to-pdf', icon: '📄', cat: 'office' },
   { path: '/gif-splitter', key: 'gif-splitter', icon: '🎞️', cat: 'office' },
@@ -167,6 +170,9 @@ export const TOOLS = [
   { path: '/nine-grid', key: 'nine-grid', icon: '🔳', cat: 'office' },
   { path: '/image-collage', key: 'image-collage', icon: '🧩', cat: 'office' },
   { path: '/salary-calc', key: 'salary-calc', icon: '💼', cat: 'office' },
+  { path: '/seal-maker', key: 'seal-maker', icon: '🔴', cat: 'office' },
+  { path: '/pdf-info', key: 'pdf-info', icon: '📑', cat: 'office' },
+  { path: '/srt-editor', key: 'srt-editor', icon: '🎬', cat: 'office' },
 ]
 
 export function toKebab(s) { return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '') }
