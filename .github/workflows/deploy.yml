@@ -34,7 +34,12 @@ jobs:
         run: cp dist/index.html dist/404.html
 
       - name: Run unit tests
-        run: npm test
+        run: npm run test:unit
+
+      - name: Run E2E tests (Playwright)
+        run: |
+          npx playwright install --with-deps chromium
+          npm run test:e2e
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
