@@ -146,6 +146,9 @@ export const TOOLS = [
   { path: '/blood-type', key: 'blood-type', icon: '🩸', cat: 'life' },
   { path: '/sleep-calculator', key: 'sleep-calculator', icon: '😴', cat: 'life' },
   { path: '/world-clock', key: 'world-clock', icon: '🌍', cat: 'life' },
+  { path: '/ideal-weight', key: 'ideal-weight', icon: '⚖️', cat: 'life' },
+  { path: '/random-picker', key: 'random-picker', icon: '🎯', cat: 'life' },
+  { path: '/lucky-money', key: 'lucky-money', icon: '🧧', cat: 'life' },
   // office
   { path: '/image-to-pdf', key: 'image-to-pdf', icon: '📄', cat: 'office' },
   { path: '/gif-splitter', key: 'gif-splitter', icon: '🎞️', cat: 'office' },
@@ -155,6 +158,9 @@ export const TOOLS = [
   { path: '/pdf-split', key: 'pdf-split', icon: '✂️', cat: 'office' },
   { path: '/id-photo', key: 'id-photo', icon: '🪪', cat: 'office' },
   { path: '/signature-pad', key: 'signature-pad', icon: '✍️', cat: 'office' },
+  { path: '/batch-rename', key: 'batch-rename', icon: '🏷️', cat: 'office' },
+  { path: '/image-watermark', key: 'image-watermark', icon: '💧', cat: 'office' },
+  { path: '/sheet-dedup', key: 'sheet-dedup', icon: '🧹', cat: 'office' },
 ]
 
 export function toKebab(s) { return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '') }
