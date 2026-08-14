@@ -161,6 +161,9 @@ export const TOOLS = [
   { path: '/day-count', key: 'day-count', icon: '📅', cat: 'life' },
   { path: '/period-tracker', key: 'period-tracker', icon: '📆', cat: 'life' },
   { path: '/reading-time', key: 'reading-time', icon: '📖', cat: 'life' },
+  { path: '/pet-age', key: 'pet-age', icon: '🐶', cat: 'life' },
+  { path: '/compound-interest', key: 'compound-interest', icon: '📈', cat: 'life' },
+  { path: '/baby-age', key: 'baby-age', icon: '👶', cat: 'life' },
   // office
   { path: '/image-to-pdf', key: 'image-to-pdf', icon: '📄', cat: 'office' },
   { path: '/gif-splitter', key: 'gif-splitter', icon: '🎞️', cat: 'office' },
@@ -185,6 +188,9 @@ export const TOOLS = [
   { path: '/pixelator', key: 'pixelator', icon: '🔲', cat: 'office' },
   { path: '/pdf-encrypt', key: 'pdf-encrypt', icon: '🔐', cat: 'office' },
   { path: '/formula-to-value', key: 'formula-to-value', icon: '🧮', cat: 'office' },
+  { path: '/pdf-to-image', key: 'pdf-to-image', icon: '🖨️', cat: 'office' },
+  { path: '/speech-to-text', key: 'speech-to-text', icon: '🎙️', cat: 'office' },
+  { path: '/batch-qr', key: 'batch-qr', icon: '📱', cat: 'office' },
 ]
 
 export function toKebab(s) { return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '') }
