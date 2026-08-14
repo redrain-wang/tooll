@@ -155,6 +155,9 @@ export const TOOLS = [
   { path: '/currency-converter', key: 'currency-converter', icon: '💱', cat: 'life' },
   { path: '/ovulation-calc', key: 'ovulation-calc', icon: '🌸', cat: 'life' },
   { path: '/height-predict', key: 'height-predict', icon: '📏', cat: 'life' },
+  { path: '/hydration-tracker', key: 'hydration-tracker', icon: '💧', cat: 'life' },
+  { path: '/exercise-calc', key: 'exercise-calc', icon: '🏃', cat: 'life' },
+  { path: '/zodiac-match', key: 'zodiac-match', icon: '💘', cat: 'life' },
   // office
   { path: '/image-to-pdf', key: 'image-to-pdf', icon: '📄', cat: 'office' },
   { path: '/gif-splitter', key: 'gif-splitter', icon: '🎞️', cat: 'office' },
@@ -173,6 +176,9 @@ export const TOOLS = [
   { path: '/seal-maker', key: 'seal-maker', icon: '🔴', cat: 'office' },
   { path: '/pdf-info', key: 'pdf-info', icon: '📑', cat: 'office' },
   { path: '/srt-editor', key: 'srt-editor', icon: '🎬', cat: 'office' },
+  { path: '/excel-to-markdown', key: 'excel-to-markdown', icon: '📊', cat: 'office' },
+  { path: '/csv-to-markdown', key: 'csv-to-markdown', icon: '📋', cat: 'office' },
+  { path: '/business-card', key: 'business-card', icon: '💳', cat: 'office' },
 ]
 
 export function toKebab(s) { return s.replace(/([A-Z])/g, '-$1').toLowerCase().replace(/^-/, '') }
